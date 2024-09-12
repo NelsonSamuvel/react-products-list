@@ -1,0 +1,15 @@
+.h1 {
+  @apply text-4xl font-extrabold;
+}
+
+.h2{
+  @apply text-2xl font-extrabold
+}
+
+.box{
+    @apply  w-[90%] mx-auto p-2 
+}
+
+.icon{
+  @apply stroke-rose-600 w-6 h-6 
+}
