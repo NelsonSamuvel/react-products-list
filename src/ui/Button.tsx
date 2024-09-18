@@ -3,15 +3,25 @@ import { ReactNode } from "react";
 type PropsType = {
   children: ReactNode;
   type?: "primary" | "secondary";
+  onClick: () => void;
 };
 
-const Button = ({ children, type = "primary" }: PropsType) => {
+const Button = ({ children, type = "primary", onClick }: PropsType) => {
   const btnStyles = {
-    primary: "",
-    secondary: "bg-white py-3 px-8   rounded-full font-semibold border border-stone-400 flex gap-2 mx-auto flex-wrap",
+    primary: "bg-red-600 px-3  py-3 font-semibold text-white rounded-full w-full",
+    secondary: `bg-white py-3 px-2 w-32 justify-center rounded-full font-semibold border border-stone-400 flex gap-2 mx-auto flex-wrap`,
   };
 
-  return <button className={btnStyles[type]}>{children}</button>;
+  function handleClick() {
+    console.log("clicked");
+    onClick();
+  }
+
+  return (
+    <button onClick={handleClick} className={btnStyles[type]}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

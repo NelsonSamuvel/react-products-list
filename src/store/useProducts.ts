@@ -12,6 +12,8 @@ export type ProductsType = {
   name: string;
   category: string;
   price: number;
+  qty: number;
+  id: string;
 };
 
 type UseProductsType = {
@@ -26,20 +28,20 @@ export const useProducts = create<UseProductsType>((set) => ({
   isLoading: false,
   error: null,
   getProducts: async () => {
-    set({ isLoading: true, error: null });
     try {
+      set({ isLoading: true, error: null });
       const res = await fetch("http://localhost:5000/products");
       if (!res.ok) {
-        throw new Error("Failed to fetch products");
+        throw new Error("Products not found");
       }
       const data = await res.json();
-      set({ products: data, isLoading: false });
+      set({ products: data });
     } catch (err) {
-      if (err instanceof Error) {
-        set({ error: err.message, isLoading: false });
-      } else {
-        set({ error: "An unknown error occurred", isLoading: false });
-      }
+      set({
+        error: err instanceof Error ? err.message : "An unknown error occurred",
+      });
+    } finally {
+      set({ isLoading: false });
     }
   },
 }));

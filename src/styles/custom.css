@@ -6,6 +6,11 @@
   @apply text-2xl font-extrabold
 }
 
+.h3{
+  @apply text-lg font-semibold
+}
+
+
 .box{
     @apply  w-[90%] mx-auto p-2 
 }

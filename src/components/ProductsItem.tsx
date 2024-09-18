@@ -4,9 +4,11 @@ import AddItem from "./AddItem";
 
 type PropsType = {
   product: ProductsType;
+  addToCart: (product: ProductsType) => void;
+  cart: ProductsType[];
 };
 
-const ProductsItem = ({ product }: PropsType) => {
+const ProductsItem = ({ product, addToCart, cart }: PropsType) => {
   return (
     <li>
       <div className="relative">
@@ -15,7 +17,7 @@ const ProductsItem = ({ product }: PropsType) => {
           alt=""
           className="rounded-md sm:hidden"
         />
-        <AddItem />
+        <AddItem product={product} addToCart={addToCart} cart={cart} />
       </div>
       <div className="mt-10 space-y-1">
         <p className="text-stone-600">{product.category}</p>

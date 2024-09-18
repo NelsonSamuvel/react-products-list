@@ -10,6 +10,8 @@ function App() {
 
   return (
     <>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <ProductsList />
       <Cart/>
     </>
