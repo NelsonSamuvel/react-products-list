@@ -1,6 +1,7 @@
 import { useProducts } from "./store/useProducts";
 import ProductsList from "./components/ProductsList";
 import Cart from "./components/Cart";
+import Order from "./components/Order";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       {error && <p>{error}</p>}
       <ProductsList />
       <Cart/>
+      <Order/>
     </>
   );
 }

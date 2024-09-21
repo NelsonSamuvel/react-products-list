@@ -1,20 +1,21 @@
-import { useCallback, useEffect } from "react";
 import { useProducts } from "../store/useProducts";
 import ProductsItem from "./ProductsItem";
 import { useCart } from "../store/useCart";
 
 
+
+
 const ProductsList = () => {
   const products = useProducts((state) => state.products);
-  const getProducts = useProducts((state) => state.getProducts);
+  // const getProducts = useProducts((state) => state.getProducts);
   const addToCart = useCart((state) => state.addToCart);
   const cart = useCart((state) => state.cart);
 
-  const memoizedGetProducts = useCallback(getProducts, [getProducts]);
+  // const memoizedGetProducts = useCallback(getProducts, [getProducts]);
 
-  useEffect(() => {
-    memoizedGetProducts();
-  }, [memoizedGetProducts]);
+  // useEffect(() => {
+  //   memoizedGetProducts();
+  // }, [memoizedGetProducts]);
 
   return (
     <section>

@@ -9,13 +9,15 @@ type PropsType = {
 };
 
 const ProductsItem = ({ product, addToCart, cart }: PropsType) => {
+  const foundCart = cart.find((item) => item.id === product.id);
+
   return (
     <li>
       <div className="relative">
         <img
           src={product.image.mobile}
           alt=""
-          className="rounded-md sm:hidden"
+          className={`rounded-md sm:hidden ${foundCart?.id === product.id ? "border-2 border-rose-700" : ""}`}
         />
         <AddItem product={product} addToCart={addToCart} cart={cart} />
       </div>

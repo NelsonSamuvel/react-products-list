@@ -25,7 +25,7 @@ const AddItem = ({ product, addToCart, cart }: PropsType) => {
       {!inCart ? (
         <Button
           type="secondary"
-          onClick={() => addToCart({ ...product, qty: 1 })}
+          onClick={() => addToCart({ ...product })}
         >
           <HiOutlineShoppingCart className="icon" />
           <span>Add Item</span>

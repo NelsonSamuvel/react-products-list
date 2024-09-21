@@ -7,7 +7,12 @@ import Button from "../ui/Button";
 const CartList = () => {
   const cart = useCart((state) => state.cart);
 
-  const totalPrice = cart.reduce((acc, cur) => acc + cur.price * cur.qty, 0);
+  const setOrder = useCart((state) => state.setOrder);
+
+  const totalPrice = cart.reduce(
+    (acc, cur) => (cur.qty ? acc + cur.price * cur.qty : 0),
+    0,
+  );
 
   return (
     <>
@@ -30,7 +35,7 @@ const CartList = () => {
           delivery
         </p>
       </div>
-      <Button>Confirm Order</Button>
+      <Button onClick={setOrder}>Confirm Order</Button>
     </>
   );
 };

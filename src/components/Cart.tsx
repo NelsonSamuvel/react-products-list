@@ -22,6 +22,7 @@ const Cart = () => {
       <div className="box rounded-md bg-white p-6 pb-12 shadow-md">
         <h2 className="h1 text-rose-700">Your Cart ({cart.length})</h2>
         {!cart.length ? emptyCart : <CartList />}
+        
       </div>
     </section>
   );

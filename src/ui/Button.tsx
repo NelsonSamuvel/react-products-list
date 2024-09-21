@@ -8,12 +8,11 @@ type PropsType = {
 
 const Button = ({ children, type = "primary", onClick }: PropsType) => {
   const btnStyles = {
-    primary: "bg-red-600 px-3  py-3 font-semibold text-white rounded-full w-full",
+    primary: "bg-orange-700 px-3  py-2 font-semibold text-white rounded-full w-full",
     secondary: `bg-white py-3 px-2 w-32 justify-center rounded-full font-semibold border border-stone-400 flex gap-2 mx-auto flex-wrap`,
   };
 
   function handleClick() {
-    console.log("clicked");
     onClick();
   }
 
