@@ -21,7 +21,7 @@ const AddItem = ({ product, addToCart, cart }: PropsType) => {
   const decreaseQuantity = useCart((state) => state.decreaseQuantity);
 
   return (
-    <div className="absolute -bottom-6 left-[50%] w-full -translate-x-[50%]">
+    <div className="absolute -bottom-6 left-[50%]  w-full -translate-x-[50%]">
       {!inCart ? (
         <Button
           type="secondary"
@@ -31,7 +31,7 @@ const AddItem = ({ product, addToCart, cart }: PropsType) => {
           <span>Add Item</span>
         </Button>
       ) : (
-        <div className="mx-auto flex w-32 flex-wrap justify-between gap-2 rounded-full border border-none border-stone-400 bg-red-600 px-2 py-3 font-semibold text-white">
+        <div className="mx-auto flex w-32 flex-wrap justify-between gap-2 rounded-full border border-none border-stone-400 bg-orange-600 px-2 py-3 font-semibold text-white">
           <button
             onClick={() => decreaseQuantity(product.id)}
             className="hover:rounded-full hover:ring-0 hover:ring-red-400 hover:ring-offset-1"

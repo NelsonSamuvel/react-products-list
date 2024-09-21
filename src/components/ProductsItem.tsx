@@ -12,12 +12,22 @@ const ProductsItem = ({ product, addToCart, cart }: PropsType) => {
   const foundCart = cart.find((item) => item.id === product.id);
 
   return (
-    <li>
+    <li className="md:mx-auto md:mt-4 md:w-max lg:w-full">
       <div className="relative">
         <img
           src={product.image.mobile}
           alt=""
-          className={`rounded-md sm:hidden ${foundCart?.id === product.id ? "border-2 border-rose-700" : ""}`}
+          className={`rounded-md md:hidden ${foundCart?.id === product.id ? "border-2 border-rose-700" : ""}`}
+        />
+        <img
+          src={product.image.tablet}
+          alt=""
+          className={`rounded-md max-md:hidden lg:hidden ${foundCart?.id === product.id ? "border-2 border-rose-700" : ""}`}
+        />
+        <img
+          src={product.image.desktop}
+          alt=""
+          className={`hidden rounded-md lg:block ${foundCart?.id === product.id ? "border-2 border-rose-700" : ""}`}
         />
         <AddItem product={product} addToCart={addToCart} cart={cart} />
       </div>

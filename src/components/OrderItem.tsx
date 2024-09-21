@@ -7,7 +7,7 @@ type PropsType = {
 
 const OrderItem = ({ item }: PropsType) => {
   return (
-    <li className="flex items-center gap-4 ">
+    <li className="flex items-center gap-4">
       <img src={item.image.thumbnail} alt=""  className="rounded-md"/>
       <div className="grow">
         <h3 className="h3 text-stone-800">{item.name}</h3>

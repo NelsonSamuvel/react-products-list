@@ -37,14 +37,14 @@ const OrderCard = () => {
   return (
     <div
       ref={cardRef}
-      className="fixed bottom-0 left-0 right-0 h-[85%] overflow-scroll rounded-lg bg-white px-4 py-4 leading-10"
+      className="fixed bottom-0 lg:inset-12 lg:w-1/3  lg:mx-auto  left-0 right-0 h-[85%] overflow-scroll rounded-lg bg-white px-4 py-4 lg:px-8 lg:py-2 leading-10"
     >
-      <HiOutlineCheckCircle className="stroke-4 mt-6 h-12 w-12 stroke-green-600" />
-      <h1 className="mt-4 w-20 text-3xl font-bold leading-10">
+      <HiOutlineCheckCircle className="stroke-4 mt-6 lg:mt-2 h-12 w-12 stroke-green-600" />
+      <h1 className="mt-4 w-20 lg:whitespace-nowrap text-3xl font-bold leading-10">
         Order Confirmed
       </h1>
       <p className="text-gray-600">We hope you enjoy your food</p>
-      <div className="mt-6 flex flex-col gap-4 rounded-md bg-rose-50 px-4 py-6">
+      <div className="mt-6 flex flex-col gap-4 lg:gap-2 rounded-md bg-rose-50 px-4 py-6">
         <ul className="">
           {cart.map((item) => (
             <OrderItem key={item.id} item={item} />

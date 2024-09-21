@@ -18,10 +18,10 @@ const ProductsList = () => {
   // }, [memoizedGetProducts]);
 
   return (
-    <section>
+    <section className="">
       <div className="box">
         <h1 className="h1 pt-6">Desserts</h1>
-        <ul className="mt-10 flex flex-col gap-6">
+        <ul className="mt-10 max-md:flex max-md:flex-col max-md:gap-6 lg:grid grid-cols-3 lg:gap-4">
           {products.map((product) => (
             <ProductsItem
               key={product.name}
